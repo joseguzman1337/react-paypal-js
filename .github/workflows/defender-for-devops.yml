@@ -1,0 +1,52 @@
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+#
+# Microsoft Security DevOps (MSDO) is a command line application which integrates static analysis tools into the development cycle.
+# MSDO installs, configures and runs the latest versions of static analysis tools
+# (including, but not limited to, SDL/security and compliance tools).
+#
+# The Microsoft Security DevOps action is currently in beta and runs on the windows-latest queue,
+# as well as Windows self hosted agents. ubuntu-latest support coming soon.
+#
+# For more information about the action , check out https://github.com/microsoft/security-devops-action
+#
+# Please note this workflow do not integrate your GitHub Org with Microsoft Defender For DevOps. You have to create an integration
+# and provide permission before this can report data back to azure.
+# Read the official documentation here : https://learn.microsoft.com/en-us/azure/defender-for-cloud/quickstart-onboard-github
+
+name: "Microsoft Defender For Devops"
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  schedule:
+    - cron: '40 3 * * 4'
+
+jobs:
+  MSDO:
+    # currently only windows latest is supported
+    runs-on: windows-latest
+
+    steps:
+    - name: Harden Runner
+      uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+      with:
+        egress-policy: audit
+
+    - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
+    - uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4.0.0
+      with:
+        dotnet-version: |
+          5.0.x
+          6.0.x
+    - name: Run Microsoft Security DevOps
+      uses: microsoft/security-devops-action@7e3060ae1e6a9347dd7de6b28195099f39852fe2 # v1.10.0
+      id: msdo
+    - name: Upload results to Security tab
+      uses: github/codeql-action/upload-sarif@1b1aada464948af03b950897e5eb522f92603cc2 # v3.24.9
+      with:
+        sarif_file: ${{ steps.msdo.outputs.sarifFile }}
