@@ -1,0 +1,32 @@
+name: Psalm – Security Scanner for PHP
+uses: psalm/psalm-github-security-scan@1.2.1
+
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  psalm:
+    permissions:
+      contents: read  # for actions/checkout to fetch code
+      security-events: write  # for github/codeql-action/upload-sarif to upload SARIF results
+    name: Psalm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+        with:
+          egress-policy: audit
+
+      - name: Checkout code
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Psalm Security Scan
+        uses: docker://ghcr.io/psalm/psalm-security-scan:latest@sha256:85ccc30c17bbe911307d6da9877c8a2e997f9ca286ca80416bf0f437f6c8b4ad
+        
+      - name: Upload Security Analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@4355270be187e1b672a7a1c7c7bae5afdc1ab94a # v3.24.10
+        with:
+          sarif_file: results.sarif
