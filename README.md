@@ -12,6 +12,8 @@
     <a href="https://paypal.github.io/react-paypal-js/"><img src="https://raw.githubusercontent.com/storybooks/brand/master/badge/badge-storybook.svg" alt="storybook"></a>
 </div>
 
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/c1379ac6e7254c5797541c75d9f896c6)](https://app.codacy.com/gh/4k4xs4pH1r3/react-paypal-js/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade) [![DeepSource](https://app.deepsource.com/gh/4k4xs4pH1r3/react-paypal-js.svg/?label=code+coverage&show_trend=true&token=k725RfjmhKCB9kHsYnv3xxJI)](https://app.deepsource.com/gh/4k4xs4pH1r3/react-paypal-js/) [![DeepSource](https://app.deepsource.com/gh/4k4xs4pH1r3/react-paypal-js.svg/?label=active+issues&show_trend=true&token=k725RfjmhKCB9kHsYnv3xxJI)](https://app.deepsource.com/gh/4k4xs4pH1r3/react-paypal-js/) [![DeepSource](https://app.deepsource.com/gh/4k4xs4pH1r3/react-paypal-js.svg/?label=resolved+issues&show_trend=true&token=k725RfjmhKCB9kHsYnv3xxJI)](https://app.deepsource.com/gh/4k4xs4pH1r3/react-paypal-js/) [![Semgrep](https://github.com/4k4xs4pH1r3/react-paypal-js/actions/workflows/semgrep.yml/badge.svg)](https://github.com/4k4xs4pH1r3/react-paypal-js/actions/workflows/semgrep.yml) [![CodeQL](https://github.com/4k4xs4pH1r3/react-paypal-js/actions/workflows/codeql.yml/badge.svg)](https://github.com/4k4xs4pH1r3/react-paypal-js/actions/workflows/codeql.yml) [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-black.svg)](https://sonarcloud.io/summary/new_code?id=4k4xs4pH1r3_react-paypal-js)
+
 ## Why use react-paypal-js?
 
 ### The Problem
