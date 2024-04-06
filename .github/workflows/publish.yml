@@ -1,11 +1,19 @@
 name: "publish to npm"
 on: workflow_dispatch
+permissions:
+  contents: read
+
 jobs:
     main:
         runs-on: ubuntu-latest
         steps:
+            - name: Harden Runner
+              uses: step-security/harden-runner@63c24ba6bd7ba022e95695ff85de572c04a18142 # v2.7.0
+              with:
+                egress-policy: audit
+
             - name: ⬇️ Checkout repo
-              uses: actions/checkout@v4
+              uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
               with:
                   token: ${{ secrets.ACCESS_TOKEN }}
                   ref: ${{github.event.pull_request.head.sha}}
@@ -16,13 +24,13 @@ jobs:
 
             - name: ⎔ Setup node
               # sets up the .npmrc file to publish to npm
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@7c12f8017d5436eb855f1ed4399f037a36fbd9e8 # v2.5.2
               with:
                   node-version: ${{ env.NVMRC }}
                   registry-url: "https://registry.npmjs.org"
 
             - name: 📥 Download deps
-              uses: bahmutov/npm-install@v1
+              uses: bahmutov/npm-install@237ded403e6012a48281f4572eab0c8eafe55b3f # v1.10.1
               with:
                   useLockFile: false
 
