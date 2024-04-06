@@ -7,12 +7,12 @@
 # Uses JFrog Xray to scan the project.
 # Read more about Frogbot here - https://github.com/jfrog/frogbot#frogbot
 
-# Some projects require creating a frogbot-config.yml file. Read more about it here - https://github.com/jfrog/frogbot/blob/master/docs/frogbot-config.md
+# Some projects require creating a frogbot-config.yml file. Read more about it here - https://github.com/jfrog/frogbot/blob/main/docs/frogbot-config.md
 
 name: "Frogbot Scan and Fix"
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 permissions:
   contents: write
   pull-requests: write
@@ -29,8 +29,8 @@ jobs:
       - uses: actions/checkout@9bb56186c3b09b4f86b1c65136769dd318469633 # v4.1.2
 
       #  IMPORTANT:
-      #  1. See the following link for information about the tools that need to be installed for Frogbot to work - https://github.com/jfrog/frogbot/tree/master/docs/templates/github-actions/scan-and-fix
-      #  2. Some projects require creating a frogbot-config.yml file. Read more about it here - https://github.com/jfrog/frogbot/blob/master/docs/frogbot-config.md
+      #  1. See the following link for information about the tools that need to be installed for Frogbot to work - https://github.com/jfrog/frogbot/tree/main/docs/templates/github-actions/scan-and-fix
+      #  2. Some projects require creating a frogbot-config.yml file. Read more about it here - https://github.com/jfrog/frogbot/blob/main/docs/frogbot-config.md
 
       - uses: jfrog/frogbot@00489def8f047904e7caafb34c4db91579eeda2a
         env:
