@@ -74,14 +74,14 @@ describe("getBraintreeWindowNamespace", () => {
 
 describe("hashStr", () => {
     test("should match the hash from the argument string", () => {
-        expect(hashStr("react")).toMatchInlineSnapshot(`"xxhjw"`);
+        expect(hashStr("react")).toMatchInlineSnapshot('"xxhjw"');
         expect(hashStr("react-js.braintree")).toMatchInlineSnapshot(
-            `"xxhjbzppoallaomelb"`
+            '"xxhjbzppoallaomelb"'
         );
         expect(hashStr("react-js.paypal")).toMatchInlineSnapshot(
-            `"xxhjbzppiqfhtje"`
+            '"xxhjbzppiqfhtje"'
         );
-        expect(hashStr("")).toMatchInlineSnapshot(`""`);
+        expect(hashStr("")).toMatchInlineSnapshot('""');
         expect(
             hashStr(
                 JSON.stringify({
@@ -96,7 +96,7 @@ describe("hashStr", () => {
                 })
             )
         ).toMatchInlineSnapshot(
-            `"iiuovjsckceqfpltierfuadvueugmwdpyghjioombfdvqayoscllfvddtjnvtfgijdxjyablkakmjjmogakewwsybbxfiiseblauicltugxfqiistfmyeomwiyrvgkaswosisqbndhwqqmmclzswdxymqeuqwetbsehtpvnvgsvtsiscvpnvvxdxekjpwoayeofhgilfeke"`
+            '"iiuovjsckceqfpltierfuadvueugmwdpyghjioombfdvqayoscllfvddtjnvtfgijdxjyablkakmjjmogakewwsybbxfiiseblauicltugxfqiistfmyeomwiyrvgkaswosisqbndhwqqmmclzswdxymqeuqwetbsehtpvnvgsvtsiscvpnvvxdxekjpwoayeofhgilfeke"'
         );
     });
 });
