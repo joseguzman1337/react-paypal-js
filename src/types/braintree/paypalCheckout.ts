@@ -44,20 +44,20 @@ export interface BraintreeShippingOption {
 
 export interface BraintreePayPalCheckoutCreatePaymentOptions {
     flow: "vault" | "checkout";
-    intent?: "authorize" | "order" | "capture" | undefined;
-    offerCredit?: boolean | undefined;
-    amount?: string | number | undefined;
-    currency?: string | undefined;
-    displayName?: string | undefined;
-    locale?: string | undefined;
-    vaultInitiatedCheckoutPaymentMethodToken?: string | undefined;
-    shippingOptions?: BraintreeShippingOption[] | undefined;
-    enableShippingAddress?: boolean | undefined;
-    shippingAddressOverride?: BraintreeAddress | undefined;
-    shippingAddressEditable?: boolean | undefined;
-    billingAgreementDescription?: string | undefined;
-    landingPageType?: string | undefined;
-    lineItems?: BraintreeLineItem[] | undefined;
+    intent?: "authorize" | "order" | "capture";
+    offerCredit?: boolean;
+    amount?: string | number;
+    currency?: string;
+    displayName?: string;
+    locale?: string;
+    vaultInitiatedCheckoutPaymentMethodToken?: string;
+    shippingOptions?: BraintreeShippingOption[];
+    enableShippingAddress?: boolean;
+    shippingAddressOverride?: BraintreeAddress;
+    shippingAddressEditable?: boolean;
+    billingAgreementDescription?: string;
+    landingPageType?: string;
+    lineItems?: BraintreeLineItem[];
     requestBillingAgreement?: boolean;
 }
 
