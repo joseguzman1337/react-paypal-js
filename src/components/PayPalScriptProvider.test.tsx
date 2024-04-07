@@ -117,7 +117,7 @@ describe("<PayPalScriptProvider />", () => {
 
         const { rerender } = render(
             <PayPalScriptProvider
-                deferLoading={true}
+                deferLoading
                 options={{ clientId: "test" }}
             >
                 <TestComponent />

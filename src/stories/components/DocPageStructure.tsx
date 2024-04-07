@@ -48,7 +48,7 @@ const DocPageStructure = ({
                     },
                 },
             }}
-            showLineNumbers={true}
+            showLineNumbers
             previewHeight={options?.previewHeight || "450px"}
             codeHeight={options?.codeHeight || "600px"}
         />

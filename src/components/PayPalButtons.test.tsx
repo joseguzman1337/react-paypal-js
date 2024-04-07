@@ -94,7 +94,7 @@ describe("<PayPalButtons />", () => {
             <PayPalScriptProvider options={{ clientId: "test" }}>
                 <PayPalButtons
                     className="custom-class-name"
-                    disabled={true}
+                    disabled
                     onInit={onInitCallbackMock}
                 />
             </PayPalScriptProvider>
@@ -130,7 +130,7 @@ describe("<PayPalButtons />", () => {
             <PayPalScriptProvider options={{ clientId: "test" }}>
                 <PayPalButtons
                     className="custom-class-name"
-                    disabled={true}
+                    disabled
                     onInit={jest.fn()}
                 />
             </PayPalScriptProvider>
