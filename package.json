@@ -61,7 +61,7 @@
         "@rollup/plugin-replace": "^3.1.0",
         "@rollup/plugin-typescript": "^8.5.0",
         "@storybook/addon-actions": "^6.5.16",
-        "@storybook/addon-docs": "^6.5.16",
+        "@storybook/addon-docs": "^8.0.6",
         "@storybook/addon-essentials": "^8.0.6",
         "@storybook/addon-links": "^6.5.16",
         "@storybook/react": "^8.0.6",
