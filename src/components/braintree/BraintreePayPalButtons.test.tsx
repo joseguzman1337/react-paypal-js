@@ -324,8 +324,7 @@ describe("render Braintree PayPal button component", () => {
         );
 
         await waitFor(() => {
-            const mockButtons = (window.paypal &&
-                window.paypal.Buttons) as jest.Mock;
+            const mockButtons = (window.paypal?.Buttons) as jest.Mock;
             expect(mockButtons).toBeCalledWith({
                 style: { layout: "horizontal" },
                 fundingSource: FUNDING.CREDIT,
