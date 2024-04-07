@@ -214,7 +214,7 @@ describe("<PayPalMarks />", () => {
         const { container } = render(
             <PayPalScriptProvider options={{ clientId: "test" }}>
                 <PayPalMarks className="mark-container">
-                    <div className="ineligible"></div>
+                    <div className="ineligible" />
                 </PayPalMarks>
             </PayPalScriptProvider>
         );
