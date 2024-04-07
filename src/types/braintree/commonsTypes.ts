@@ -52,7 +52,7 @@ export interface BraintreeAddress {
     /**
      * Extended address.
      */
-    line2?: string | undefined;
+    line2?: string;
 
     /**
      * City or locality.
@@ -77,12 +77,12 @@ export interface BraintreeAddress {
     /**
      * Phone number.
      */
-    phone?: string | undefined;
+    phone?: string;
 
     /**
      * Recipient of postage.
      */
-    recipientName?: string | undefined;
+    recipientName?: string;
 }
 
 export interface BraintreeLineItem {
@@ -164,23 +164,23 @@ export interface BraintreeAuthorizationResponseDetails {
     payerId: string;
     firstName: string;
     lastName: string;
-    countryCode?: string | undefined;
-    phone?: string | undefined;
+    countryCode?: string;
+    phone?: string;
 
     /**
      * User's shipping address details, only available if shipping address is enabled.
      */
-    shippingAddress?: BraintreeAddress | undefined;
+    shippingAddress?: BraintreeAddress;
 
     /**
      * User's billing address details.
      */
-    billingAddress?: BraintreeAddress | undefined;
+    billingAddress?: BraintreeAddress;
 
     /**
      * This property will only be present when the customer pays with PayPal Credit.
      */
-    creditFinancingOffered?: BraintreeCreditFinancingOptions | undefined;
+    creditFinancingOffered?: BraintreeCreditFinancingOptions;
 }
 
 export interface BraintreeTokenizePayload {
